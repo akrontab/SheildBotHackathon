@@ -20,7 +20,7 @@ This example code is in the public domain.
   
  Shieldbot sb = Shieldbot();
  int S1,S2,S3,S4,S5, toneid;
- int switchPin = 2;
+ int switchPin = 11;
  #define speaker 3 //pin number
  
 // notes in the melody:
@@ -59,13 +59,13 @@ void loop() {
   
   while( digitalRead(switchPin) == HIGH) {
   //  while(false){
-  sb.drive(127, 127);  
+  sb.drive(-125, -125);  
     
   //Read all the sensors 
   S1 = sb.readS1();
   S2 = sb.readS2();
   S3 = sb.readS3();
-  S4 = sb.readS4();
+  S4 = sb.readS4();// I made a change
   S5 = sb.readS5();
  
    //Print the status of each sensor to the Serial console
@@ -82,94 +82,94 @@ void loop() {
   Serial.println();
   
   
- if (S1 == HIGH && S2 == LOW && S3 == LOW && S4 == LOW && S5 == LOW) //1
+ if (S1 == LOW && S2 == HIGH && S3 == HIGH && S4 == HIGH && S5 == HIGH) //1
  {
 toneid = 1;
  }
   else if (S1 == LOW && S2 == HIGH && S3 == LOW && S4 == LOW && S5 == LOW) //2
  { toneid = 2 ; }
- else if (S1 == HIGH && S2 == HIGH && S3 == LOW && S4 == LOW && S5 == LOW) //3
+ else if (S1 == LOW && S2 == LOW && S3 == HIGH && S4 == HIGH && S5 == HIGH) //3
  {toneid =3 ;}
- else if (S1 == LOW && S2 == LOW && S3 == HIGH && S4 == LOW && S5 == LOW) //4
+ else if (S1 == HIGH && S2 == HIGH && S3 == LOW && S4 == HIGH && S5 == HIGH) //4
  {toneid = 4;}
  
- else if (S1 == HIGH && S2 == LOW && S3 == HIGH && S4 == LOW && S5 == LOW) //5
+ else if (S1 == LOW && S2 == HIGH && S3 == LOW && S4 == HIGH && S5 == HIGH) //5
  {toneid = 5;}
  
- else if (S1 == LOW && S2 == HIGH && S3 == HIGH && S4 == LOW && S5 == LOW) //6
+ else if (S1 == HIGH && S2 == LOW && S3 == LOW && S4 == HIGH && S5 == HIGH) //6
  {toneid = 6;}
  
- else if (S1 == HIGH && S2 == HIGH && S3 == HIGH && S4 == LOW && S5 == LOW) //7
+ else if (S1 == LOW && S2 == LOW && S3 == LOW && S4 == HIGH && S5 == HIGH) //7
  {toneid = 7;}
  
- else if (S1 == LOW && S2 == LOW && S3 == LOW && S4 == HIGH && S5 == LOW) //8
+ else if (S1 == HIGH && S2 == HIGH && S3 == HIGH && S4 == LOW && S5 == HIGH) //8
  {toneid = 8;}
  
- else if (S1 == HIGH && S2 == LOW && S3 == LOW && S4 == HIGH && S5 == LOW) //9
+ else if (S1 == LOW && S2 == HIGH && S3 == HIGH && S4 == LOW && S5 == HIGH) //9
  {toneid = 9;}
  
- else if (S1 == LOW && S2 == HIGH && S3 == LOW && S4 == HIGH && S5 == LOW) //10
+ else if (S1 == HIGH && S2 == LOW && S3 == HIGH && S4 == LOW && S5 == HIGH) //10
  {toneid = 10;}
  
- else if (S1 == HIGH && S2 == HIGH && S3 == LOW && S4 == HIGH && S5 == LOW) //11
+ else if (S1 == LOW && S2 == LOW && S3 == HIGH && S4 == LOW && S5 == HIGH) //11
  {toneid = 11;}
  
- else if (S1 == LOW && S2 == LOW && S3 == HIGH && S4 == HIGH && S5 == LOW) //12
+ else if (S1 == HIGH && S2 == HIGH && S3 == LOW && S4 == LOW && S5 == HIGH) //12
  {toneid = 12;}
  
- else if (S1 == HIGH && S2 == LOW && S3 == HIGH && S4 == HIGH && S5 == LOW) //13
+ else if (S1 == LOW && S2 == HIGH && S3 == LOW && S4 == LOW && S5 == HIGH) //13
  {toneid =13 ;}
  
- else if (S1 == LOW && S2 == HIGH && S3 == HIGH && S4 == HIGH && S5 == LOW) //14
+ else if (S1 == HIGH && S2 == LOW && S3 == LOW && S4 == LOW && S5 == HIGH) //14
  {toneid = 14;}
  
- else if (S1 == HIGH && S2 == HIGH && S3 == HIGH && S4 == HIGH && S5 == LOW) //15
+ else if (S1 == LOW && S2 == LOW && S3 == LOW && S4 == LOW && S5 == HIGH) //15
  {toneid = 15;}
  
- else if (S1 == LOW && S2 == LOW && S3 == LOW && S4 == LOW && S5 == HIGH) //16
+ else if (S1 == HIGH && S2 == HIGH && S3 == HIGH && S4 == HIGH && S5 == LOW) //16
  {toneid = 16;
  }
- else if (S1 == HIGH && S2 == LOW && S3 == LOW && S4 == LOW && S5 == HIGH) //17
+ else if (S1 == LOW && S2 == HIGH && S3 == HIGH && S4 == HIGH && S5 == LOW) //17
  {toneid = 17;
  }
-  else if (S1 == LOW && S2 == HIGH && S3 == LOW && S4 == LOW && S5 == HIGH) //18
+  else if (S1 == HIGH && S2 == LOW && S3 == HIGH && S4 == HIGH && S5 == LOW) //18
  {toneid = 18;}
- else if (S1 == HIGH && S2 == HIGH && S3 == LOW && S4 == LOW && S5 == HIGH) //19
+ else if (S1 == LOW && S2 == LOW && S3 == HIGH && S4 == HIGH && S5 == LOW) //19
  {toneid = 19;}
- else if (S1 == LOW && S2 == LOW && S3 == HIGH && S4 == LOW && S5 == HIGH) //20
+ else if (S1 == HIGH && S2 == HIGH && S3 == LOW && S4 == HIGH && S5 == LOW) //20
  {toneid = 20;}
  
- else if (S1 == HIGH && S2 == LOW && S3 == HIGH && S4 == LOW && S5 == HIGH) //21
+ else if (S1 == LOW && S2 == HIGH && S3 == LOW && S4 == HIGH && S5 == LOW) //21
  {toneid = 21;}
  
- else if (S1 == LOW && S2 == HIGH && S3 == HIGH && S4 == LOW && S5 == HIGH) //22
+ else if (S1 == HIGH && S2 == LOW && S3 == LOW && S4 == HIGH && S5 == LOW) //22
  {toneid = 22;}
  
- else if (S1 == HIGH && S2 == HIGH && S3 == HIGH && S4 == LOW && S5 == HIGH) //23
+ else if (S1 == LOW && S2 == LOW && S3 == LOW && S4 == HIGH && S5 == LOW) //23
  {toneid = 23;}
  
- else if (S1 == LOW && S2 == LOW && S3 == LOW && S4 == HIGH && S5 == HIGH) //24
+ else if (S1 == HIGH && S2 == HIGH && S3 == HIGH && S4 == LOW && S5 == LOW) //24
  {toneid = 24;}
  
- else if (S1 == HIGH && S2 == LOW && S3 == LOW && S4 == HIGH && S5 == HIGH) //25
+ else if (S1 == LOW && S2 == HIGH && S3 == HIGH && S4 == LOW && S5 == LOW) //25
  {toneid = 25;}
  
- else if (S1 == LOW && S2 == HIGH && S3 == LOW && S4 == HIGH && S5 == HIGH) //26
+ else if (S1 == HIGH && S2 == LOW && S3 == HIGH && S4 == LOW && S5 == LOW) //26
  {toneid = 26;}
  
- else if (S1 == HIGH && S2 == HIGH && S3 == LOW && S4 == HIGH && S5 == HIGH) //27
+ else if (S1 == LOW && S2 == LOW && S3 == HIGH && S4 == LOW && S5 == LOW) //27
  {toneid = 27;}
  
- else if (S1 == LOW && S2 == LOW && S3 == HIGH && S4 == HIGH && S5 == HIGH) //28
+ else if (S1 == HIGH && S2 == HIGH && S3 == LOW && S4 == LOW && S5 == LOW) //28
  {toneid = 28;}
  
- else if (S1 == HIGH && S2 == LOW && S3 == HIGH && S4 == HIGH && S5 == HIGH) //29
+ else if (S1 == LOW && S2 == HIGH && S3 == LOW && S4 == LOW && S5 == LOW) //29
  {toneid = 29;}
  
- else if (S1 == LOW && S2 == HIGH && S3 == HIGH && S4 == HIGH && S5 == HIGH) //30
+ else if (S1 == HIGH && S2 == LOW && S3 == LOW && S4 == LOW && S5 == LOW) //30
  {toneid = 30;}
  
- else if (S1 == HIGH && S2 == HIGH && S3 == HIGH && S4 == HIGH && S5 == HIGH) //31
+ else if (S1 == LOW && S2 == LOW && S3 == LOW && S4 == LOW && S5 == LOW) //31
  {toneid = 31;}
  
   else //0
@@ -285,6 +285,7 @@ break;
 
  } //Close While
  sb.stop();
+ noTone(speaker);
  Serial.println("I'm stopped");
  }
  
