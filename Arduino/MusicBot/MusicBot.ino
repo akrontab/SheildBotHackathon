@@ -1,22 +1,16 @@
 /*
-   Melody
-  
-  Plays a melody 
- 
-  circuit:
-  * 8-ohm speaker on digital pin 8
-  
-  created 21 Jan 2010
-  modified 30 Aug 2011
-  by Tom Igoe 
+PINS USED
 
-This example code is in the public domain.
-  
-  http://arduino.cc/en/Tutorial/Tone
-  
-  */
-  #include "pitches.h"
-  #include <Shieldbot.h>
+Shield Bot uses every pin.. I will name it Shieldbot Hitler becase
+the pins I want to use is Poland...... *Grumpy cat*
+
+PINS FO REALZEEEEZ
+Switch - Pin 11
+Speaker - Pin 3
+  LED(Red) - Pin 2
+  LED(Blue) - Pin 4
+
+ */
   
  Shieldbot sb = Shieldbot();
  int S1,S2,S3,S4,S5, toneid;
@@ -289,3 +283,36 @@ break;
  Serial.println("I'm stopped");
  }
  
+  //Refactor This Mofo
+ void FadeLED1()
+ {
+   // set the brightness of pin 9:
+  analogWrite(led, brightness);    
+
+  // change the brightness for next time through the loop:
+  brightness = brightness + fadeAmount;
+
+  // reverse the direction of the fading at the ends of the fade: 
+  if (brightness == 0 || brightness == 255) {
+    fadeAmount = -fadeAmount ; 
+  }     
+  // wait for 30 milliseconds to see the dimming effect    
+  delay(30);  
+ }
+ 
+ //Refactor This Mofo
+ void FadeLED2() {
+   
+    // set the brightness of pin 9:
+  analogWrite(led, brightness);    
+
+  // change the brightness for next time through the loop:
+  brightness = brightness + fadeAmount;
+
+  // reverse the direction of the fading at the ends of the fade: 
+  if (brightness == 0 || brightness == 255) {
+    fadeAmount = -fadeAmount ; 
+  }     
+  // wait for 30 milliseconds to see the dimming effect    
+  delay(30);   
+ }
